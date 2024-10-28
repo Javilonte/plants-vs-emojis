@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d3f8d3;
+    margin: 0;
+    padding: 0;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+#game-board {
+    position: relative;
+    width: 765px; /* Ajusta según el tamaño total de las celdas y los márgenes */
+    height: 425px; /* Ajusta según el número de filas */
+}
+
+#sun-container {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#plant-selection {
+    margin: 10px;
+}
+
+#score-container {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.plant-button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #32a852;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(9, 80px);
+    grid-gap: 5px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.plant {
+    font-size: 40px;
+}
+
+.pea {
+    font-size: 40px;
+    position: absolute;
+    transition: transform 4s linear; /* Asegúrate de que la duración coincide */
+}
+
+.zombie {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 16s linear;
+}
+.sun {
+    font-size: 50px; /* Aumentar el tamaño de los soles */
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    animation: sunSpawn 0.5s ease-out; /* Agregar animación */
+}
+
+@keyframes sunSpawn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
